@@ -12,7 +12,7 @@ const Simulations = () => {
   useEffect(() => {
     const fetchSimulations = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/simulations");
+        const res = await axios.get("https://blixoralabs-backend.onrender.com/api/simulations");
         setSimulations(res.data);
       } catch (err) {
         console.error("Simulation fetch error", err);
@@ -22,7 +22,7 @@ const Simulations = () => {
     const fetchEnrollments = async () => {
       try {
         if (!token) return;
-        const res = await axios.get("http://localhost:8000/api/enrollments", {
+        const res = await axios.get("https://blixoralabs-backend.onrender.com/api/enrollments", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEnrolledIds(res.data.map((e) => e.simulation._id));
