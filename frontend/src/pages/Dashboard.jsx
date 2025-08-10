@@ -19,7 +19,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchEnrollments = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/enrollments", {
+        const res = await axios.get("https://blixoralabs-backend.onrender.com/api/enrollments", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEnrollments(res.data);
