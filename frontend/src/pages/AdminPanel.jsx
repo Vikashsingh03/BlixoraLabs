@@ -20,7 +20,7 @@ const AdminPanel = () => {
 
   const fetchSimulations = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/simulations");
+      const res = await axios.get("https://blixoralabs-backend.onrender.com/api/simulations");
       setSimulations(res.data);
     } catch (err) {
       console.error("Failed to fetch simulations:", err);
@@ -29,7 +29,7 @@ const AdminPanel = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/simulations/${id}`);
+      await axios.delete(`https://blixoralabs-backend.onrender.com/api/simulations/${id}`);
       setSimulations(simulations.filter((sim) => sim._id !== id));
     } catch (err) {
       console.error("Delete failed:", err);
@@ -48,7 +48,7 @@ const AdminPanel = () => {
 
   const handleSave = async (id) => {
     try {
-      await axios.put(`http://localhost:8000/api/simulations/${id}`, editedData);
+      await axios.put(`https://blixoralabs-backend.onrender.com/api/simulations/${id}`, editedData);
       const updatedList = simulations.map((sim) =>
         sim._id === id ? { ...editedData, _id: id } : sim
       );
@@ -67,7 +67,7 @@ const AdminPanel = () => {
   const handleAddSimulation = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/simulations", newSim);
+      await axios.post("https://blixoralabs-backend.onrender.com/api/simulations", newSim);
       await fetchSimulations();
       setNewSim({ title: "", category: "", level: "", status: "Draft" });
       setShowAddForm(false);
