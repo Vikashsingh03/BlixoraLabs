@@ -11,13 +11,13 @@ const Home = () => {
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <a
-          href="/simulations"
+          href="api/auth/simulations"
           className="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700"
         >
           Browse Simulations
         </a>
         <a
-          href="/login"
+          href="api/auth/login"
           className="bg-white border border-blue-600 text-blue-700 px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-100"
         >
           Login
