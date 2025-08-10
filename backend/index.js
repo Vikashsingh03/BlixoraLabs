@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000;
 
 
 app.use(cors({
-  origin:["https://blixoralabs-frontend.onrender.com","http://localhost:5173"]
+  origin:["https://blixoralabs-frontend.onrender.com","http://localhost:5173"],
   credentials: true, 
 }));
 
